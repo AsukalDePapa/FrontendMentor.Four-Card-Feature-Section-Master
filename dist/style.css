@@ -1,0 +1,271 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  vertical-align: baseline;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  padding: 100px 0;
+  line-height: 1.7;
+  font-family: var(--ff-poppins);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--bg-clr);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  font-size: 0.9375rem;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+:root {
+  --bg-clr: hsl(0, 0%, 95%);
+  --card-clr: hsl(0, 0%, 100%);
+  --ff-poppins: "Poppins", sans-serif;
+  --bt-cyan: 5px solid hsl(180, 62%, 55%);
+  --bt-red: 5px solid hsl(0, 78%, 62%);
+  --bt-orange: 5px solid hsl(34, 97%, 64%);
+  --bt-blue: 5px solid hsl(212, 86%, 64%);
+  --box-shadow: rgba(17, 12, 46, 0.219) 10px 10px 15px 0px;
+  --xdark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --xlight-gray: hsl(0, 0%, 98%);
+  --orange: hsl(34, 99%, 35%);
+  --blue: hsl(212, 86%, 64%);
+}
+
+main {
+  width: min(100%, 21.875rem);
+}
+@media (min-width: 48.75rem) {
+  main {
+    width: min(90%, 48.75rem);
+  }
+}
+@media (min-width: 90rem) {
+  main {
+    width: min(90%, 80rem);
+  }
+}
+
+section {
+  display: grid;
+  place-content: center;
+  gap: 1.5rem;
+  grid-template-areas: "supervisor" "team-builder" "karma" "calculator";
+}
+@media (min-width: 48.75rem) {
+  section {
+    grid-template-areas: "supervisor team-builder" "karma calculator";
+  }
+}
+@media (min-width: 90rem) {
+  section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+.head {
+  text-align: center;
+  margin: 0 auto 4rem auto;
+  width: min(100%, 700px);
+}
+.head h1 {
+  font-size: 1.6875rem;
+  color: var(--xdark-blue);
+  margin-bottom: 1.5rem;
+}
+.head span {
+  color: hsl(0deg, 0%, 20%);
+}
+.head p {
+  color: var(--grayish-blue);
+  font-size: 1.0625rem;
+}
+@media (min-width: 48.75rem) {
+  .head h1 {
+    font-size: 1.875rem;
+    transition: 1s ease-out;
+  }
+}
+@media (min-width: 90rem) {
+  .head h1 {
+    font-size: 2rem;
+  }
+}
+
+section p {
+  color: var(--grayish-blue);
+  margin-bottom: 3rem;
+}
+
+.card {
+  padding: 1.75rem;
+  width: min(100%, 25rem);
+  background-color: var(--card-clr);
+  border-radius: 0.375rem;
+}
+
+.supervisor {
+  border-top: var(--bt-cyan);
+}
+
+.team-builder {
+  border-top: var(--bt-red);
+}
+
+.karma {
+  border-top: var(--bt-orange);
+}
+
+.calculator {
+  border-top: var(--bt-blue);
+}
+
+article:nth-child(1) {
+  grid-area: supervisor;
+  transition: transform 1s ease;
+}
+@media (min-width: 90rem) {
+  article:nth-child(1) {
+    grid-column: 1;
+    transform: translateY(9.375rem);
+  }
+}
+
+article:nth-child(2) {
+  grid-area: team-builder;
+}
+@media (min-width: 90rem) {
+  article:nth-child(2) {
+    grid-column: 2;
+  }
+}
+
+article:nth-child(3) {
+  grid-area: karma;
+}
+@media (min-width: 90rem) {
+  article:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+article:nth-child(4) {
+  grid-area: calculator;
+  transition: transform 1s ease;
+}
+@media (min-width: 90rem) {
+  article:nth-child(4) {
+    grid-row: 1;
+    grid-column: 3;
+    transform: translateY(9.375rem);
+  }
+}
+
+.box-shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.fw-light {
+  font-weight: 200;
+}
+
+.fw-normal {
+  font-weight: 400;
+}
+
+.fw-bold,
+h2 {
+  font-weight: 600;
+}
+
+img {
+  float: right;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1%;
+}
+
+.attribution {
+  font-size: 0.8125rem;
+  color: var(--orange);
+  text-align: center;
+}
+
+.attribution a {
+  font-size: 0.9375rem;
+  color: var(--blue);
+  position: relative;
+}
+.attribution a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  margin-inline: auto;
+  background-color: var(--blue);
+  transition: width 0.3s ease-in-out;
+}
+.attribution a:hover::after {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
