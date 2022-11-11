@@ -1,0 +1,24 @@
+:root {
+    --bg-clr: hsl(0, 0%, 95%);
+    --card-clr: hsl(0, 0%, 100%);
+
+    // font-family
+    --ff-poppins: 'Poppins', sans-serif;
+
+    // border-top
+    --bt-cyan: 5px solid hsl(180, 62%, 55%);
+    --bt-red: 5px solid hsl(0, 78%, 62%);
+    --bt-orange: 5px solid hsl(34, 97%, 64%);
+    --bt-blue: 5px solid hsl(212, 86%, 64%);
+
+    // box-shadow
+    --box-shadow: rgba(17, 12, 46, 0.219) 10px 10px 15px 0px;
+
+    // text color
+    --xdark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --xlight-gray: hsl(0, 0%, 98%);
+
+    --orange: hsl(34, 99%, 35%);
+    --blue: hsl(212, 86%, 64%);
+}

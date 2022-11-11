@@ -1,0 +1,161 @@
+@use "../utils/breakpoints" as bp;
+@use "../utils/functions" as f;
+
+main {
+    width: min(100%, f.rem(350));
+
+    @include bp.breakpointMin(medium-screen) {
+        width: min(90%, f.rem(780));
+    }
+    @include bp.breakpointMin(large-screen) {
+        width: min(90%, f.rem(1280));
+    }
+}
+
+section {
+    display: grid;
+    place-content: center;
+    gap: 1.5rem;
+    grid-template-areas: 
+        'supervisor'
+        'team-builder'
+        'karma'
+        'calculator';
+
+    @include bp.breakpointMin(medium-screen) {
+        grid-template-areas: 
+        'supervisor team-builder'
+        'karma calculator';
+    }
+    @include bp.breakpointMin(large-screen) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        // grid-template-areas: 
+        // 'supervisor team-builder karma'
+        // 'none calculator none';
+    }
+}
+
+.head {
+    
+    text-align: center;
+    margin: 0 auto f.rem(64) auto;
+    width: min(100%, 700px);
+    
+    h1 {
+        font-size: f.rem(27);
+        color: var(--xdark-blue);
+        margin-bottom: f.rem(24);
+        // transition: 1s ease-out;
+    }
+
+    span {
+        color: hsl(0, 0%, 20%);
+    }
+
+    p {
+        color: var(--grayish-blue);
+        font-size: f.rem(17);
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        h1 {
+            font-size: f.rem(30); 
+            transition: 1s ease-out;
+        }
+    }
+    
+    @include bp.breakpointMin(large-screen) {
+        h1 {
+            font-size: f.rem(32); 
+        }
+    }
+}
+
+section{
+    p {
+        color: var(--grayish-blue);
+        margin-bottom: f.rem(48);
+    }
+}
+
+.card {
+    padding: f.rem(28);
+    // width:  100%;
+    width: min(100%, f.rem(400));
+    background-color: var(--card-clr);
+    border-radius: f.rem(6);
+}
+
+.supervisor {
+    border-top: var(--bt-cyan);
+}
+
+.team-builder {
+    border-top: var(--bt-red);
+}
+
+.karma {
+    border-top: var(--bt-orange);
+}
+
+.calculator {
+    border-top: var(--bt-blue);
+}
+
+
+// globals
+article:nth-child(1) {
+    grid-area: supervisor;
+    transition: transform 1s ease;
+
+    @include bp.breakpointMin(large-screen) {
+        grid-column: 1;
+        transform: translateY(f.rem(150));
+    }
+}
+article:nth-child(2) {
+    grid-area: team-builder;
+
+    @include bp.breakpointMin(large-screen) {
+        grid-column: 2;
+    }
+}
+article:nth-child(3) {
+    grid-area: karma;
+
+    @include bp.breakpointMin(large-screen) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+article:nth-child(4) {
+    grid-area: calculator;
+    transition: transform 1s ease;
+
+    @include bp.breakpointMin(large-screen) {
+        grid-row: 1;
+        grid-column: 3;
+        transform: translateY(f.rem(150));
+        
+    }
+}
+
+.box-shadow {
+    box-shadow: var(--box-shadow);
+}
+
+.fw-light {
+    font-weight: 200;
+}
+.fw-normal {
+    font-weight: 400;
+}
+.fw-bold,
+h2 {
+    font-weight: 600;
+}
+
+img {
+    float: right;
+}
